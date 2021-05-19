@@ -21,6 +21,7 @@
 		C93A2FFE26547BA40079EFEA /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A2FFD26547BA40079EFEA /* ContentDetailView.swift */; };
 		C93A300126547E8F0079EFEA /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93A300026547E8F0079EFEA /* AVKit.framework */; };
 		C93A300326547F9F0079EFEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A300226547F9F0079EFEA /* Constants.swift */; };
+		C93A30442655943C0079EFEA /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A30432655943C0079EFEA /* CodeTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C93A2FFD26547BA40079EFEA /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		C93A300026547E8F0079EFEA /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		C93A300226547F9F0079EFEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C93A30432655943C0079EFEA /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				C93A2FF926545E330079EFEA /* ContentView.swift */,
 				C93A2FFB265479AF0079EFEA /* ContentViewRow.swift */,
 				C93A2FFD26547BA40079EFEA /* ContentDetailView.swift */,
+				C93A30432655943C0079EFEA /* CodeTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				C93A2FFE26547BA40079EFEA /* ContentDetailView.swift in Sources */,
 				C911C8282649EBCF0053FD5A /* ContentModel.swift in Sources */,
 				C93A2FFC265479AF0079EFEA /* ContentViewRow.swift in Sources */,
+				C93A30442655943C0079EFEA /* CodeTextView.swift in Sources */,
 				C93A2FF6265439300079EFEA /* HomeRow.swift in Sources */,
 				C911C82E2649F2A00053FD5A /* Models.swift in Sources */,
 				C93A300326547F9F0079EFEA /* Constants.swift in Sources */,

@@ -20,9 +20,11 @@ class ContentModel: ObservableObject {
     @Published var currentLesson:Lesson?
     var currentLessonIdx = 0
     
-    
+    // current lesson explanation
+    @Published var lessonExplanation = NSAttributedString()
     
     var styleData:Data?
+    
     
     init() {
         getLocalData()
@@ -92,6 +94,9 @@ class ContentModel: ObservableObject {
         
         // set current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIdx]
+        
+        // set lesson explanation
+        lessonExplanation = addStyling(currentLesson!.explanation)
     }
     
     func hasNextLesson() -> Bool {
@@ -107,6 +112,7 @@ class ContentModel: ObservableObject {
             
             // set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIdx]
+            lessonExplanation = addStyling(currentLesson!.explanation)
         } else {
             currentLessonIdx = 0
             currentLesson = nil
@@ -114,6 +120,29 @@ class ContentModel: ObservableObject {
         
         
         
-       
+        
     }
+    
+    private func addStyling(_ htmlString:String) -> NSAttributedString {
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        // add the styling data
+        if styleData != nil{
+            data.append(self.styleData!)
+        }
+        
+        // add html data
+        data.append(Data(htmlString.utf8))
+        
+        // convert to attributed string
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            resultString = attributedString
+        }
+        
+        return resultString
+        
+    }
+    
+    
 }
