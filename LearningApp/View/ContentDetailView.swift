@@ -19,7 +19,9 @@ struct ContentDetailView: View {
         let url = URL(string:Constants.videoHostURL + (lesson?.video ?? ""))
         
         GeometryReader { geo in
+            
             VStack {
+                
                 // only show video if we get valid url
                 if url != nil {
                     VideoPlayer(player: AVPlayer(url:url!))
@@ -38,11 +40,8 @@ struct ContentDetailView: View {
                         
                         ZStack {
                             
-                            Rectangle()
-                                .frame(height: 48)
-                                .foregroundColor(.green)
-                                .cornerRadius(10)
-                                .shadow(radius: 5)
+                            RectangleCard(color: Color.green)
+                                .frame(height:48)
                             
                             Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIdx+1].title)")
                                 .bold()
@@ -50,6 +49,24 @@ struct ContentDetailView: View {
                         }
                     })
                     
+                } else {
+                    // show complete button at the end of lesson
+                    
+                    Button(action: {
+                        model.currentContentSelected = nil
+                    }, label: {
+                        
+                        ZStack {
+                            
+                            RectangleCard(color: Color.green)
+                                .frame(height: 48)
+                                
+                            
+                            Text("Complete")
+                                .bold()
+                                .foregroundColor(.white)
+                        }
+                    })
                 }
             }
             .padding()

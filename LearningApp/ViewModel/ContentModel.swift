@@ -23,6 +23,9 @@ class ContentModel: ObservableObject {
     // current lesson explanation
     @Published var lessonExplanation = NSAttributedString()
     
+    // current selected content and test
+    @Published var currentContentSelected:Int?
+    
     var styleData:Data?
     
     
